@@ -1,3 +1,5 @@
+// https://geekster-in.notion.site/JS-Notes-9cc14d1252904c989cc80104a4570982 :- notes link
+
 let s1 = 'Akhil Sharma';
 let s2 = "Akhil Sharma";
 let s3 = `Akhil Sharma`;
