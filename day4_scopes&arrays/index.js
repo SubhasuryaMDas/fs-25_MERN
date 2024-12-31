@@ -7,10 +7,10 @@ let arr = [
 ]
 //splice method
 // Array.splice(startIndex, deletionCount, item1,2,3,4,,,,,)
-arr.splice(1,3)
+// arr.splice(1,3)
 
 
-let newSlicedArray = arr.slice(1,3)
+// let newSlicedArray = arr.slice(1,3)
 // arr.shift()
 // arr.unshift({name:"test 10", score:1000}, {name:"test 11", score:200})
 // let deleted = arr.pop();

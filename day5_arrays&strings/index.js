@@ -1,12 +1,12 @@
 // https://geekster-in.notion.site/JS-Notes-9cc14d1252904c989cc80104a4570982 :- notes link
 
-let s1 = 'Akhil Sharma';
-let s2 = "Akhil Sharma";
-let s3 = `Akhil Sharma`;
-console.log(s1, s2, s3);
+// let s1 = 'Akhil Sharma';
+// let s2 = "Akhil Sharma";
+// let s3 = `Akhil Sharma`;
+// console.log(s1, s2, s3);
 
-let s4 = "She patiently waited for his number to be called.\nShe had no desire to be there, but her mom had insisted that she goo\nShe's resisted at first, but over time she realized it was simply easier to appease her and go\nMom tended to be that way. She would keep insisting until you \n wore down and did what she wanted So, here she sat, patiently waiting for her number to be called."
-console.log(s4);
+// let s4 = "She patiently waited for his number to be called.\nShe had no desire to be there, but her mom had insisted that she goo\nShe's resisted at first, but over time she realized it was simply easier to appease her and go\nMom tended to be that way. She would keep insisting until you \n wore down and did what she wanted So, here she sat, patiently waiting for her number to be called."
+// console.log(s4);
 
 
 
