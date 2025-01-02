@@ -1,0 +1,11 @@
+{
+    "name": "XYZ",
+    "score":60,
+    "isSelected":false,
+    "license": null,
+    "shopItem":["food", "clothes"],
+    "myObj":{
+        "name": "Akhil",
+        "age": 25
+    }
+}
