@@ -52,7 +52,7 @@ console.log(stringPortion3);
 // let s1 = 'Akhil';
 // let s2 = "Akhil";
 // let s3 = `Akhil`;
-// let s4 = 'My name is Akhil Sharma \nI am from delhi NCR\n'
+// let s4 = 'My name is Akhil Sharma \I am from delhi NCR\n'
 // console.log(s4);
 
 // s1[3] = 'z';

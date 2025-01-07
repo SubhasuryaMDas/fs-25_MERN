@@ -28,19 +28,40 @@ const product = {
     brand: 'Vivo',
     color: ["Black", "White","Red"],
     quantity: 10,
+    address:{
+        street: '123 Main St',
+        city: 'New York',
+        state: 'NY',
+        zip: '10001',
+        number:{
+            house: 123,
+            phoneNumber:{
+                area: 'Central Park',
+                number: 1234567890,
+                extension:{
+                    extensionN: '123',
+                    income:{
+                        amount: 5000,
+                        currency: ['USD', 'EUR', 'GBP'],
+                    }
+                }
+            }
+        }
+    },
     description: 'A powerful smartphone with 6GB RAM and 128GB storage.',
     reviews:[
         {rating: 4, comment: 'Good phone'},
         {rating: 5, comment: 'Excellent phone'},
+
         {rating: 3, comment: 'Average phone'},
         {rating: 4, comment: 'Great phone'}
     ],
     availiability:true,
 }
 
-for(let key in product.reviews[3]){
-    console.log(product.reviews[3][key]);
-}
+// for(let key in product.reviews[3]){
+//     console.log(product.reviews[3][key]);
+// }
 // let keyss = Object.values(product);
 // console.log(keyss);
 
