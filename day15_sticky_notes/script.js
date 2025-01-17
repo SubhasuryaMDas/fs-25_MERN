@@ -38,16 +38,13 @@ function createNote() {
     console.log(cross_btn);
     // div.style.display = "none";
     div.remove();
-
+    if (notes_container.childElementCount === 0) {
+      para.style.display = "block";
+    }
     // console.log(notes_container.childElementCount);
   });
 
-  if (notes_container.childElementCount <= 0) {
-    para.style.display = "block";
-    console.log(notes_container.childElementCount)
-  } else {
-    para.style.display = "none";
-  }
+   para.style.display = "none";
 
 
 }
