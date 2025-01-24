@@ -1,0 +1,34 @@
+1. Booking a Cab
+    Select a cab (Uber, Ola, Lyft)
+    Confirm the ride
+    Driver is assigned
+    Ride starts
+    Ride completes
+
+2. Online Shopping Order Process
+    Select items
+    Add to cart
+    Make payment
+    Order confirmation
+    Shipment tracking
+
+3. Movie Ticket Booking
+    Choose movie
+    Select seats
+    Make payment
+    Receive ticket confirmation
+    Show ticket at entry
+
+4. Food Delivery App Flow
+    Choose a restaurant
+    Select food items
+    Place order
+    Food is prepared
+    Order is delivered
+
+5. Bank Loan Processing
+    Submit loan application
+    Document verification
+    Credit score check
+    Loan approval
+    Loan disbursement
