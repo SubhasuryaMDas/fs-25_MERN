@@ -1,7 +1,7 @@
 fetch('https://nekos.best/api/v2/neko')
 .then(response => response.json())
 .then((data)=>{
-    console.log(data.results["0"].url);
+    console.log(data.results["0"]);
     showDataonUI(data.results["0"].url)
 })
 
