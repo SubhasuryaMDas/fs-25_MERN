@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Playing with Gemini API 🔥</h1>
+    <input type="text" id="text" />
+    <button>Search With Gemini</button>
+    <div></div>
+
+    <!-- AIzaSyDj0zMY9h5imk320ZeDTf3YPRISxbMDg8o -->
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+
+      let text = document.getElementById("text");
+      let button = document.querySelector("button");
+      let div = document.querySelector("div");
+
+      async function getGeminiResponse() {
+        //   let api_key = "AIzaSyAmcpDIUPl1Y7oIHAAF58aSDwVXpRyBq3E"
+        const genAI = new GoogleGenerativeAI(`${api_key}`);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const prompt = text.value;
+        const result = await model.generateContent(prompt);
+        let response = result.response.text();
+
+        let p = document.createElement("p");
+        p.innerText = response;
+
+        div.appendChild(p);
+        // console.log(result.response.text());
+      }
+
+      button.addEventListener("click", getGeminiResponse);
+    </script>
+  </body>
+</html>
