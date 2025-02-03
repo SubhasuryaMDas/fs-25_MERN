@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 5px;
+        }
+        .submit {
+            margin-top: 20px;
+        }
+        .input1 {
+            background: #ff5722;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .input1:hover {
+            background: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="./login.html" name="RegForm" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td>Full Name</td>
+                    <td><input type="text" name="Name" placeholder="Anne Humter"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="EMail" placeholder="anne.humter@mail.com"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="Password" placeholder="******"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" name="Confirm" placeholder="******"></td>
+                </tr>
+            </table>
+            <div class="submit">
+                <input type="submit" class="input1" value="Register" name="Submit" />
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm(){
+            let name = document.forms["RegForm"]["Name"];
+            let email = document.forms["RegForm"]["EMail"];
+            let password = document.forms["RegForm"]["Password"];
+            let confirmPassword = document.forms["RegForm"]["Confirm"];
+
+            if(name.value === ""){
+                alert("Please enter your name");
+                return false;
+            }
+            if(email.value === ""){
+                alert("Please enter your email");
+                return false;
+            }
+            if(password.value === ""){
+                alert("Please enter your password");
+                return false;
+            }
+            if(confirmPassword.value === ""){
+                alert("Please enter your confirm password");
+                return false;
+            }
+            if(password.value === confirmPassword.value){
+                if(registeredInTheLocalStorage()){
+                    alert("Registration is done successfully!!");
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                alert("Password and Confirm Password should be same");
+                return false;
+            }
+            return true;
+        }
+
+        let arr = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
+    
+        function registeredInTheLocalStorage(){
+            let name = document.forms["RegForm"]["Name"].value;
+            let email = document.forms["RegForm"]["EMail"].value;
+            let password = document.forms["RegForm"]["Password"].value;
+            let confirmPassword = document.forms["RegForm"]["Confirm"].value;
+
+            let userObj = {
+                id: new Date(),
+                name: name,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword
+            };
+
+            let userExists = arr.some(user => user.email === userObj.email);
+
+            if(userExists){
+                return false;
+            }else{
+                arr.push(userObj);
+            }
+
+            localStorage.setItem("users", JSON.stringify(arr));
+            return true;
+        }
+    </script>
+</body>
+</html>
