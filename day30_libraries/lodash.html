@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Lodash Library</h1>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+      let arr = [23, 54, 21, 5, 234, 23, 453, 45, 234, 23, 43];
+
+      function square(n) {
+        return n * n;
+      }
+
+      let ans = _.map(arr, square);
+      console.log(ans);
+
+      var users = [
+        { user: "barney", age: 36, active: true },
+        { user: "fred", age: 40, active: false },
+      ];
+
+      function isActive(user) {
+        return !user.active;
+      }
+
+      let filteredArray  = _.filter(users, function isActive(user) {
+        return !user.active;
+      });
+      console.log(filteredArray);
+      
+    </script>
+  </body>
+</html>

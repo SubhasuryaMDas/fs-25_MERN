@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        let covidChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: [],
+            datasets: [{
+              label: 'Covid Data',
+              data: [],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        async function fetchCoviddata() {
+            let data = await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=all")
+            let response = await data.json()
+            // console.log(response);
+            let dates = Object.keys(response.cases);
+            let cases = Object.values(response.cases);
+            console.log(dates);
+            console.log(cases);
+            covidChart.data.labels = dates;
+            covidChart.data.datasets[0].data = cases;
+            covidChart.update();
+        }
+        fetchCoviddata()
+      </script>
+       
+    <!-- <h1 style="text-align: center;">Debouncing and Throttling Concepts 🔥 </h1>
+    <input type="text" id="movie_search">
+    <button id="my_btn" onclick="newFun()">Submit Details !!!!</button>
+    <div id="movie_results"></div>
+    <script src="./script.js"></script> -->
+</body>
+</html>
